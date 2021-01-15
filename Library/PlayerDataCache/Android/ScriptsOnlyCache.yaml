@@ -3,6 +3,9 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CheckForCollision
     - CreateReferencePoint
+    - LimitPlaceableObjectsToOne
+    - PlacementObjects
+    - PlacementSelectionController
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.ARCore.Editor.dll:
@@ -13,7 +16,9 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.ARFoundation.ARCameraBackground
     - UnityEngine.XR.ARFoundation.ARCameraManager
     - UnityEngine.XR.ARFoundation.ARInputManager
+    - UnityEngine.XR.ARFoundation.ARPlane
     - UnityEngine.XR.ARFoundation.ARPlaneManager
+    - UnityEngine.XR.ARFoundation.ARPlaneMeshVisualizer
     - UnityEngine.XR.ARFoundation.ARPointCloud
     - UnityEngine.XR.ARFoundation.ARPointCloudManager
     - UnityEngine.XR.ARFoundation.ARPointCloudParticleVisualizer
@@ -24,8 +29,6 @@ ScriptsOnlyBuild:
     Unity.XR.Interaction.Toolkit.dll:
     - UnityEngine.XR.Interaction.Toolkit.AR.ARGestureInteractor
     - UnityEngine.XR.Interaction.Toolkit.AR.ARPlacementInteractable
-    - UnityEngine.XR.Interaction.Toolkit.AR.ARSelectionInteractable
-    - UnityEngine.XR.Interaction.Toolkit.AR.ARTranslationInteractable
     - UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
@@ -85,44 +88,52 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11712}
     - Class: 114
-      Script: {instanceID: 11922}
+      Script: {instanceID: 11858}
     - Class: 114
-      Script: {instanceID: 12024}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 12172}
+      Script: {instanceID: 11926}
     - Class: 114
-      Script: {instanceID: 12452}
+      Script: {instanceID: 11966}
     - Class: 114
-      Script: {instanceID: 12458}
+      Script: {instanceID: 12028}
     - Class: 114
-      Script: {instanceID: 12780}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12794}
+      Script: {instanceID: 12456}
     - Class: 114
-      Script: {instanceID: 12846}
+      Script: {instanceID: 12462}
     - Class: 114
-      Script: {instanceID: 12964}
+      Script: {instanceID: 12784}
     - Class: 114
-      Script: {instanceID: 13064}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 13192}
+      Script: {instanceID: 12968}
     - Class: 114
-      Script: {instanceID: 13218}
+      Script: {instanceID: 13068}
     - Class: 114
-      Script: {instanceID: 13248}
+      Script: {instanceID: 13148}
     - Class: 114
-      Script: {instanceID: 13296}
+      Script: {instanceID: 13158}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 13554}
+      Script: {instanceID: 13224}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13254}
     - Class: 114
-      Script: {instanceID: 29356}
+      Script: {instanceID: 13366}
+    - Class: 114
+      Script: {instanceID: 13410}
+    - Class: 114
+      Script: {instanceID: 13562}
+    - Class: 114
+      Script: {instanceID: 13674}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 120
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
@@ -359,6 +370,12 @@ ScriptsOnlyBuild:
     className: TransitionArmModel
   - hash:
       serializedVersion: 2
+      Hash: cd67d559c04b7b8bcd5efe6e1d571b16
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlacementSelectionController
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -369,6 +386,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 7fbe7ad5acad837358abd13aef09e42c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CreateReferencePoint
   - hash:
       serializedVersion: 2
       Hash: d251bf88db6c95a6b1aa0b69298da9ef
@@ -707,6 +730,12 @@ ScriptsOnlyBuild:
     className: ARPointCloudManager
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LimitPlaceableObjectsToOne
+  - hash:
+      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -765,6 +794,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlacementObjects
   - hash:
       serializedVersion: 2
       Hash: 42d5616485cf08019deaf720013aee3a
@@ -927,13 +962,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 7fbe7ad5acad837358abd13aef09e42c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CreateReferencePoint
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/FH/Sem 5/AVR/Builds/testPI17.apk
+  playerPath: C:/FH/Sem 5/AVR/Builds/testPI34.apk
