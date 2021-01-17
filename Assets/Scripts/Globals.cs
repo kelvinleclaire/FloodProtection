@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Globals : MonoBehaviour
+public static class Globals 
 {
     // private bool orderScreen {get; set;}
-    private bool orderScreen = false;
+    public static bool orderScreen { get; set; }
+    public static float timer { get; set; }
+    public static bool timeOver { get; set; }
 
-    public bool getOrderScreen(){
-        return orderScreen;
-    }
-
-    public void setOrderScreen(bool b){
-        orderScreen = b;
-    }
+    public static bool dropzoneRight { get; set; }
+    public static bool dropzoneLeft { get; set; }
+    public static bool startTimer { get; set; }
+    public static Vector3 sandsackPosition { get; set; }
 }
