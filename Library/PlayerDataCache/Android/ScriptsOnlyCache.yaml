@@ -1127,4 +1127,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/Endscreen.unity
-  playerPath: D:/WS2021/AVR/Project/apks/testPI38.apk
+  playerPath: D:/WS2021/AVR/Project/apks/testPI39.apk

@@ -4,7 +4,7 @@ using System.Timers;
 public class StartTheGame : MonoBehaviour
 {
     public GameObject startCanvas;
-    private float timeRemaining = 10;
+    private float timeRemaining = 30;
     private static Timer aTimer;
 
     // Start is called before the first frame update
