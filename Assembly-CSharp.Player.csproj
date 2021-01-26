@@ -646,6 +646,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Imports\BrokenVector\LowPolyFencePack\Scripts\DoorController.cs" />
+    <Compile Include="Assets\Imports\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
     <Compile Include="Assets\Scripts\AR Placeable\CreateReferencePoint.cs" />
     <Compile Include="Assets\Scripts\AR Placeable\LimitPlaceableObjectsToOne.cs" />
     <Compile Include="Assets\Scripts\CheckForCollision.cs" />

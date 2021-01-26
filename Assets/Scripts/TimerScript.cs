@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
 
-    public GameObject TimerCanvas;
-    public GameObject TimerText;
-    private Text myText;
     public GUIStyle style = new GUIStyle();
     string log = "";
 
@@ -16,7 +13,7 @@ public class TimerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myText = GameObject.Find("TimerText").GetComponent<Text>();
+
         
 
     }
@@ -24,12 +21,7 @@ public class TimerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myText)
-        {
-            myText.text = $"TIMER: {Globals.timer}";
-        }
-        //log += myText.text + "\n";
-
+       
     }
 
     private void OnGUI()
