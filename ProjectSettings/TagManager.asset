@@ -8,8 +8,6 @@ TagManager:
   - City
   - Sandsack1
   - Cellphone
-  - Water1
-  - Water
   - Dropzone1.1
   - Dropzone1.2
   - Dropzone1.3
@@ -23,6 +21,13 @@ TagManager:
   - Dropzone3.2
   - Dropzone3.3
   - Dropzone3.4
+  - Water1
+  - Water2
+  - Water3
+  - Water4
+  - Water5
+  - Water6
+  - Water
   layers:
   - Default
   - TransparentFX

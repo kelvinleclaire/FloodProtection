@@ -865,13 +865,13 @@
       <Project>{9D87D22B-ABF7-B5DF-BAB4-3D270B85EDF3}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{6D47D0E9-1BF2-A250-680B-82608364CE01}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{30C2F248-F583-F1BE-4DAA-A1287F44A008}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{6D47D0E9-1BF2-A250-680B-82608364CE01}</Project>
+      <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{13213A23-AE38-DD5A-097C-82BDEFF851F1}</Project>

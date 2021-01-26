@@ -79,76 +79,78 @@ public class PlacementSelectionController : MonoBehaviour
                             {
                                 //go2.transform.localPosition = hit.transform.position;
                                 //go2.transform.localPosition = new Vector3(hit.transform.position.x, 1f, hit.transform.position.y);
-                                if (hit.collider.tag == "Dropzone")
-                                {
-                                    log += $"Position: {go2.transform.position}";
-                                    Globals.sandsackPosition = go2.transform.position;
-                                    log += $"Local Position: {go2.transform.localPosition}";
-                                    go2.transform.localPosition = new Vector3(1.16f, 1f, 1.98f);
-                                    selected = "";
-                                    Globals.dropzoneRight = true;
-                                }
-                                if (hit.collider.tag == "Dropzone2")
-                                {
-                                    go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
-                                    selected = "";
-                                    Globals.dropzoneLeft = true;
-                                }
+                               
+                                //if (hit.collider.tag == "Dropzone")
+                                //{
+                                //    log += $"Position: {go2.transform.position}";
+                                //    Globals.sandsackPosition = go2.transform.position;
+                                //    log += $"Local Position: {go2.transform.localPosition}";
+                                //    go2.transform.localPosition = new Vector3(1.16f, 1f, 1.98f);
+                                //    selected = "";
+                                //    Globals.dropzoneRight = true;
+                                //}
+                                //if (hit.collider.tag == "Dropzone2")
+                                //{
+                                //    go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                //    selected = "";
+                                //    Globals.dropzoneLeft = true;
+                                //}
 
+                                //Abfrage wo der Sandsack hingesetzt wird
                                 switch (hit.collider.tag)
                                 {
                                     case "Dropzone1.1":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(2f, 0.5f, 1.93f);
                                         selected = "";
                                         break;
                                     case "Dropzone1.2":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(2f, 0.5f, -1.95f);
                                         selected = "";
                                         break;
                                     case "Dropzone1.3":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(2f, 0.5f, -10f);
                                         selected = "";
                                         break;
                                     case "Dropzone1.4":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(2f, 0.5f, 9.5f);
                                         selected = "";
                                         break;
                                 //Zweite Reihe der Dropzones
                                     case "Dropzone2.1":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-3f, 0.5f, 9.5f);
                                         selected = "";
                                         break;
                                     case "Dropzone2.2":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-3f, 0.5f, 1.93f);
                                         selected = "";
                                         break;
                                     case "Dropzone2.3":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-1.43f, 0.5f, -2.41f);
                                         selected = "";
                                         break;
                                     case "Dropzone2.4":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-3f, 0.5f, -6.1f);
                                         selected = "";
                                         break;
                                     case "Dropzone2.5":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-2.4f, 0.5f, -10f);
                                         selected = "";
                                         break;
                                 //Dritte Reihe der Dropzones
                                     case "Dropzone3.1":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, -10f);
                                         selected = "";
                                         break;
                                     case "Dropzone3.2":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, -6.1f);
                                         selected = "";
                                         break;
                                     case "Dropzone3.3":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, 1.93f);
                                         selected = "";
                                         break;
                                     case "Dropzone3.4":
-                                        go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
+                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, 9.5f);
                                         selected = "";
                                         break;
                                 }
