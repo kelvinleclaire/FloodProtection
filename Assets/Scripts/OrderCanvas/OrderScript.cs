@@ -1,42 +1,55 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OrderScript : MonoBehaviour
 {
 
 
-
+    public GameObject SandsackPlace;
+    public GameObject Sandsack1Place;
     public GameObject orderCanvas;
     public GameObject sandsack;
+    public GameObject City;
+    public GUIStyle style = new GUIStyle();
+    string log = "";
+    private int id = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-     
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Globals.orderScreen)
+        if (Globals.orderScreen)
         {
             orderCanvas.SetActive(true);
         }
     }
 
-    public void order(){
-        float x = -0.7f;
-        for(int i=2; i<4; i++)
+    public void order()
+    {
+        Vector3 pos = SandsackPlace.transform.position;
+        if (id <= 6)
+        {
+            for (int i = 0; i <2; i++)
             {
-            // Local Coordiates = -3.9, 0.5, 3.9
-            if (Globals.sandsackPosition != null)
-            {
-                sandsack = Instantiate(sandsack, Globals.sandsackPosition, Quaternion.identity);
-                //sandsack.transform.localPosition = new Vector3(x, 0.5f, 3.92f);
-                sandsack.tag = $"Sandsack{i}";
-                x -= 1.49f;
+                sandsack = Instantiate(sandsack, pos, Quaternion.identity);
+                sandsack.tag = $"Sandsack{id}";
+                sandsack.transform.SetParent(City.transform);
+                sandsack.transform.localScale = new Vector3(1f, 1f, 1f);
+                sandsack.transform.localRotation = Quaternion.identity;
+                pos = Sandsack1Place.transform.position;
+                log += "Sandsack created: " + sandsack.tag + "\n";
+                id++;
             }
-            }
+            
+        }
+
+    }
+    private void OnGUI()
+    {
+        GUILayout.Label(log, style);
     }
 }

@@ -55,8 +55,7 @@ public class PlacementSelectionController : MonoBehaviour
 
                         if (hit.collider.tag.StartsWith("Sandsack"))
                         {
-                            selected = hit.collider.tag;
-                            
+                            selected = hit.collider.tag;                            
                         }
 
                         //Auswahl der Telefonzelle
@@ -67,7 +66,7 @@ public class PlacementSelectionController : MonoBehaviour
                         log += $"selected: {selected}\n";
                     }
                 }
-                //Falls bereits ein GO selected ist und nun drapiert werden soll
+                //Falls bereits ein GO selected ist soll dieses nun drapiert werden
                 else
                 {
                     if (Physics.Raycast(ray, out hit))
@@ -77,25 +76,6 @@ public class PlacementSelectionController : MonoBehaviour
                         {
                             if (hit.collider.tag.StartsWith("Dropzone"))
                             {
-                                //go2.transform.localPosition = hit.transform.position;
-                                //go2.transform.localPosition = new Vector3(hit.transform.position.x, 1f, hit.transform.position.y);
-                               
-                                //if (hit.collider.tag == "Dropzone")
-                                //{
-                                //    log += $"Position: {go2.transform.position}";
-                                //    Globals.sandsackPosition = go2.transform.position;
-                                //    log += $"Local Position: {go2.transform.localPosition}";
-                                //    go2.transform.localPosition = new Vector3(1.16f, 1f, 1.98f);
-                                //    selected = "";
-                                //    Globals.dropzoneRight = true;
-                                //}
-                                //if (hit.collider.tag == "Dropzone2")
-                                //{
-                                //    go2.transform.localPosition = new Vector3(1.43f, 1f, -1.95f);
-                                //    selected = "";
-                                //    Globals.dropzoneLeft = true;
-                                //}
-
                                 //Abfrage wo der Sandsack hingesetzt wird
                                 switch (hit.collider.tag)
                                 {

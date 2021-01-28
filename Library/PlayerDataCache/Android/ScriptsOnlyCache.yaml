@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - CheckForCollision
     - CreateReferencePoint
     - DeactivateCanvas
+    - KillColliders
     - LimitPlaceableObjectsToOne
     - OrderScript
     - PlacementObjects
@@ -11,6 +12,7 @@ ScriptsOnlyBuild:
     - RiseWater
     - SetEndText
     - StartTheGame
+    - StopWater
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.ARCore.Editor.dll:
@@ -249,6 +251,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13582}
     - Class: 114
       Script: {instanceID: 13694}
+    - Class: 114
+      Script: {instanceID: 30246}
+    - Class: 114
+      Script: {instanceID: 183012}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -562,7 +568,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 8110fa98a1d31aa7cfd3a9f4eeddff04
+      Hash: 0f35e1d5aa94fc0c2de48fdb4e96f0ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DeactivateCanvas
@@ -646,12 +652,6 @@ ScriptsOnlyBuild:
     className: ARCoreLoaderSettings
   - hash:
       serializedVersion: 2
-      Hash: 8110fa98a1d31aa7cfd3a9f4eeddff04
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CloseCanvas
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -694,7 +694,7 @@ ScriptsOnlyBuild:
     className: ARGestureInteractor
   - hash:
       serializedVersion: 2
-      Hash: 2d8ee24c6914e8bd88238c714a238446
+      Hash: 29e5bc95df19b57684404ad286f722f5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OrderScript
@@ -1136,8 +1136,20 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 7fbe7ad5acad837358abd13aef09e42c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StopWater
+  - hash:
+      serializedVersion: 2
+      Hash: 7fbe7ad5acad837358abd13aef09e42c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KillColliders
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/Endscreen.unity
-  playerPath: D:/WS2021/AVR/Project/apks/testPI47.apk
+  playerPath: D:/WS2021/AVR/Project/apks/testPI85.apk

@@ -1,13 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CloseCanvas : MonoBehaviour
+public class DeactivateCanvas : MonoBehaviour
 {
     public GameObject orderCanvas;
+    public GUIStyle style = new GUIStyle();
+    string log = "";
 
-    void Close()
+    public void Close()
     {
-        orderCanvas.SetActive(false);
+        if (orderCanvas != null)
+        {
+            Globals.orderScreen = false;
+            orderCanvas.SetActive(false);
+        }
+    }
+
+    private void OnGUI()
+    {
+        GUILayout.Label(log, style);
     }
 }

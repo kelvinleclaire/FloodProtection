@@ -68,17 +68,20 @@
     <Compile Include="Assets\Imports\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
     <Compile Include="Assets\Scripts\AR Placeable\CreateReferencePoint.cs" />
     <Compile Include="Assets\Scripts\AR Placeable\LimitPlaceableObjectsToOne.cs" />
-    <Compile Include="Assets\Scripts\CheckForCollision.cs" />
     <Compile Include="Assets\Scripts\EndScreen\SetEndText.cs" />
     <Compile Include="Assets\Scripts\Globals.cs" />
-    <Compile Include="Assets\Scripts\OrderCanvas\CloseCanvas.cs" />
     <Compile Include="Assets\Scripts\OrderCanvas\DeactivateCanvas.cs" />
     <Compile Include="Assets\Scripts\OrderCanvas\OrderScript.cs" />
     <Compile Include="Assets\Scripts\Raycast\PlacementObjects.cs" />
     <Compile Include="Assets\Scripts\Raycast\PlacementSelectionController.cs" />
-    <Compile Include="Assets\Scripts\RiseWater.cs" />
     <Compile Include="Assets\Scripts\StartTheGame.cs" />
-    <Compile Include="Assets\Scripts\TimerScript.cs" />
+    <Compile Include="Assets\Scripts\Water\CheckForCollision.cs" />
+    <Compile Include="Assets\Scripts\Water\KillColliders.cs" />
+    <Compile Include="Assets\Scripts\Water\RiseWater.cs" />
+    <Compile Include="Assets\Scripts\Water\StopWater.cs" />
+    <Compile Include="Assets\Scripts\Water\TimerScript.cs" />
+    <Compile Include="Assets\Scripts\Water\Water.cs" />
+    <Compile Include="Assets\Scripts\Water\WaterScript.cs" />
     <None Include="Assets\Imports\POLYGON city pack\Read_me.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Timers;
 
 public class StartTheGame : MonoBehaviour
 {

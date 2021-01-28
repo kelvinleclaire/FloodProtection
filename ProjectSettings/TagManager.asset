@@ -28,6 +28,31 @@ TagManager:
   - Water5
   - Water6
   - Water
+  - Sandsack1Place
+  - SandsackPlace
+  - Sandsack2
+  - Sandsack3
+  - Sandsack4
+  - Sandsack5
+  - Sandsack6
+  - Sandsack7
+  - Sandsack8
+  - SideWater1.1
+  - SideWater1.2
+  - SideWater1.3
+  - SideWater2.1
+  - SideWater2.2
+  - SideWater2.3
+  - Check10
+  - Check20
+  - Check30
+  - Check40
+  - Check50
+  - Check60
+  - Check70
+  - Check80
+  - Check90
+  - Check100
   layers:
   - Default
   - TransparentFX
