@@ -6,9 +6,9 @@ public class WaterScript : MonoBehaviour
 {
     public GameObject Water;
     private Vector3 vector;
-    private float y = 0.01f;
-    public float timeRemaining = 60;
-    private static Timer aTimer;
+    private float y;
+    private float timeRemaining = 6000;
+    private Timer aTimer;
 
     public GUIStyle style = new GUIStyle();
     string log = "";
@@ -20,19 +20,22 @@ public class WaterScript : MonoBehaviour
 
         vector = Water.transform.localScale;
 
-        if (this.gameObject.CompareTag("Water"))
+        if (Water.CompareTag("Water"))
         {
-            y = 0.001f;
+            this.y = 0.001f;
+            log += "\n Sind in Water \n";
 
         }
-        //if (this.gameObject.tag.StartsWith("Side"))
-        //{
-        //    y = 0f;
-        //}
+        if (Water.tag.StartsWith("Side"))
+        {
+            this.y = 0f;
+            log += "\n Sind in Side \n";
+
+        }
 
         aTimer = new Timer();
-        aTimer.Interval = 1000;
-        aTimer.Elapsed += ATimer_Elapsed;
+        aTimer.Interval = 100;
+        aTimer.Elapsed += this.ATimer_Elapsed;
     }
 
     // Update is called once per frame
@@ -53,14 +56,16 @@ public class WaterScript : MonoBehaviour
 
     private void ATimer_Elapsed(object sender, ElapsedEventArgs e)
     {
-        
-        vector += new Vector3(0f, y, 0f);
-        log += "Y ist gerade anscheindend :" + y + "\n";
+
+        vector += new Vector3(0f, this.y, 0f);
+
         if (timeRemaining <= 0)
         {
             aTimer.Enabled = false;
             Globals.timeOver = false;
         }
+        timeRemaining -= 1;
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,6 +77,7 @@ public class WaterScript : MonoBehaviour
 
         if (other.gameObject.tag.StartsWith("Sandsack"))
         {
+            vector.y = other.gameObject.transform.localPosition.y;
             y = 0f;
         }
     }
