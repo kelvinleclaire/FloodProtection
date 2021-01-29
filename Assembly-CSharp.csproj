@@ -80,7 +80,6 @@
     <Compile Include="Assets\Scripts\Water\RiseWater.cs" />
     <Compile Include="Assets\Scripts\Water\StopWater.cs" />
     <Compile Include="Assets\Scripts\Water\TimerScript.cs" />
-    <Compile Include="Assets\Scripts\Water\Water.cs" />
     <Compile Include="Assets\Scripts\Water\WaterScript.cs" />
     <None Include="Assets\Imports\POLYGON city pack\Read_me.txt" />
     <Reference Include="UnityEngine">
