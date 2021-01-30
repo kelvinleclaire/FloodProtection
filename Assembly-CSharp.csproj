@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\AR Placeable\LimitPlaceableObjectsToOne.cs" />
     <Compile Include="Assets\Scripts\EndScreen\SetEndText.cs" />
     <Compile Include="Assets\Scripts\Globals.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCWalk.cs" />
     <Compile Include="Assets\Scripts\OrderCanvas\DeactivateCanvas.cs" />
     <Compile Include="Assets\Scripts\OrderCanvas\OrderScript.cs" />
     <Compile Include="Assets\Scripts\Raycast\PlacementObjects.cs" />
@@ -81,6 +82,9 @@
     <Compile Include="Assets\Scripts\Water\StopWater.cs" />
     <Compile Include="Assets\Scripts\Water\TimerScript.cs" />
     <Compile Include="Assets\Scripts\Water\WaterScript.cs" />
+    <Compile Include="Assets\simple modular human\scripts\Test_script.cs" />
+    <Compile Include="Assets\simple modular human\scripts\clothing.cs" />
+    <None Include="Assets\simple modular human\readMe.txt" />
     <None Include="Assets\Imports\POLYGON city pack\Read_me.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

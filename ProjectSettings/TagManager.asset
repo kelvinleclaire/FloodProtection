@@ -53,6 +53,7 @@ TagManager:
   - Check80
   - Check90
   - Check100
+  - NPCGoal1
   layers:
   - Default
   - TransparentFX
