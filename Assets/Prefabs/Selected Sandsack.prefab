@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 975942581819458616, guid: d61df16af6000544db816db18143254d,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.75
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 975942581819458616, guid: d61df16af6000544db816db18143254d,
         type: 3}
@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 975942581819458616, guid: d61df16af6000544db816db18143254d,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1754301716879722326, guid: d61df16af6000544db816db18143254d,
         type: 3}

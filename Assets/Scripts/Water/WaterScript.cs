@@ -7,8 +7,9 @@ public class WaterScript : MonoBehaviour
     public GameObject Water;
     private Vector3 vector;
     private float y;
-    private float timeRemaining = 6000;
+    private float timeRemaining = 300;
     private Timer aTimer;
+    private bool hitSandsack;
 
     public GUIStyle style = new GUIStyle();
     string log = "";
@@ -49,20 +50,26 @@ public class WaterScript : MonoBehaviour
             }
             else
             {
-                Water.transform.localScale = vector;
+                if (!hitSandsack) 
+                { 
+                    Water.transform.localScale = vector; 
+                }
             }
         }
     }
 
     private void ATimer_Elapsed(object sender, ElapsedEventArgs e)
     {
-
-        vector += new Vector3(0f, this.y, 0f);
+        if (!hitSandsack) { 
+            vector += new Vector3(0f, this.y, 0f);
+        }
 
         if (timeRemaining <= 0)
         {
             aTimer.Enabled = false;
+            Globals.endGame = true;
             Globals.timeOver = false;
+            
         }
         timeRemaining -= 1;
 
@@ -76,9 +83,8 @@ public class WaterScript : MonoBehaviour
         }
 
         if (other.gameObject.tag.StartsWith("Sandsack"))
-        {
-            vector.y = other.gameObject.transform.localPosition.y;
-            y = 0f;
+        {            
+            hitSandsack = true;            
         }
     }
     private void OnGUI()

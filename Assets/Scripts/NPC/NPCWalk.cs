@@ -1,37 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class NPCWalk : MonoBehaviour
 {
     public GameObject target;
     public GameObject NPCCanvas;
     public GameObject Townhall;
-    public float speedMod = 10.0f;
+    public float speedMod = 1f;
     private Vector3 point;
     private Vector3 lastPosition;
+    private Vector3 testVecor;
+    private NavMeshAgent navMeshAgent;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        point = target.transform.position;
-        lastPosition = target.transform.position;
-        transform.LookAt(point);
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        if (lastPosition != target.transform.position)
-        {
-            transform.position -= (lastPosition - target.transform.position);
-            lastPosition = target.transform.position;
-            point = lastPosition;
-        }
-
-        transform.RotateAround(point, new Vector3(0.0f, 1f, 0f), horizontal * Time.deltaTime * speedMod);
-        transform.LookAt(point);
+        MoveAgent();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,9 +33,15 @@ public class NPCWalk : MonoBehaviour
         {
             NPCCanvas.SetActive(true);
 
-            if (Globals.timeOver) { 
-            target = Townhall;
+            if (Globals.timeOver)
+            {
+                target = Townhall;
             }
         }
+    }
+
+    private void MoveAgent()
+    {
+        navMeshAgent.SetDestination(target.transform.position);
     }
 }

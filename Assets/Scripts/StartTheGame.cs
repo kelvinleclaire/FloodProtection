@@ -3,6 +3,7 @@
 public class StartTheGame : MonoBehaviour
 {
     public GameObject startCanvas;
+    public GameObject WelcomeCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,8 @@ public class StartTheGame : MonoBehaviour
     {
         if (startCanvas != null)
         {
-            startCanvas.SetActive(false);
-            Globals.timeOver = true;
+            WelcomeCanvas.SetActive(true);
+            startCanvas.SetActive(false);          
         }
 
     }

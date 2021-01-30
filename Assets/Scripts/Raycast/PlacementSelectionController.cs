@@ -23,131 +23,144 @@ public class PlacementSelectionController : MonoBehaviour
 
     public Texture texture;
 
+    private float yPos = 0.03f;
+    public GameObject Plane;
+
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         log += "Awaken yo \n";
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Plane == null)
         {
-            Touch touch = Input.GetTouch(0);
-            touchPosition = touch.position;
-            if (touch.phase == TouchPhase.Began)
+            Plane = GameObject.Find("Plane");
+            if (Plane != null)
             {
-                log += "Touch erkannt \n";
-                Ray ray = arCamera.ScreenPointToRay(touch.position);
-                RaycastHit hit;
-
-                //Falls noch kein GO selected wurde
-
-                if (string.IsNullOrEmpty(selected))
+                //yPos = Plane.transform.localPosition.y + 0.01f;
+                log += $"yPos= {yPos}\n";
+            }
+        }
+        else
+        {
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                touchPosition = touch.position;
+                if (touch.phase == TouchPhase.Began)
                 {
-                    if (Physics.Raycast(ray, out hit))
-                    {
-                        log += "Inside Raycast \n";
+                    log += "Touch erkannt \n";
+                    Ray ray = arCamera.ScreenPointToRay(touch.position);
+                    RaycastHit hit;
 
-                        if (hit.collider.tag.StartsWith("Sandsack"))
-                        {
-                            selected = hit.collider.tag;                            
-                        }
+                    //Falls noch kein GO selected wurde
 
-                        //Auswahl der Telefonzelle
-                        if (hit.collider.tag == "Cellphone")
-                        {
-                            Globals.orderScreen = true;
-                        }
-                        log += $"selected: {selected}\n";
-                    }
-                }
-                //Falls bereits ein GO selected ist soll dieses nun drapiert werden
-                else
-                {
-                    if (Physics.Raycast(ray, out hit))
+                    if (string.IsNullOrEmpty(selected))
                     {
-                        GameObject go2 = GameObject.FindWithTag(selected);
-                        if (go2 != null)
+                        if (Physics.Raycast(ray, out hit))
                         {
-                            if (hit.collider.tag.StartsWith("Dropzone"))
+                            log += "Inside Raycast \n";
+
+                            if (hit.collider.tag.StartsWith("Sandsack"))
                             {
-                                //Abfrage wo der Sandsack hingesetzt wird
-                                switch (hit.collider.tag)
+                                selected = hit.collider.tag;
+                            }
+
+                            //Auswahl der Telefonzelle
+                            if (hit.collider.tag == "Cellphone")
+                            {
+                                Globals.orderScreen = true;
+                            }
+                            log += $"selected: {selected}\n";
+                        }
+                    }
+                    //Falls bereits ein GO selected ist soll dieses nun drapiert werden
+                    else
+                    {
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            GameObject go2 = GameObject.FindWithTag(selected);
+                            if (go2 != null)
+                            {
+                                if (hit.collider.tag.StartsWith("Dropzone"))
                                 {
-                                    case "Dropzone1.1":
-                                        go2.transform.localPosition = new Vector3(2f, 0.5f, 1.93f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone1.2":
-                                        go2.transform.localPosition = new Vector3(2f, 0.5f, -1.95f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone1.3":
-                                        go2.transform.localPosition = new Vector3(2f, 0.5f, -10f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone1.4":
-                                        go2.transform.localPosition = new Vector3(2f, 0.5f, 9.5f);
-                                        selected = "";
-                                        break;
-                                //Zweite Reihe der Dropzones
-                                    case "Dropzone2.1":
-                                        go2.transform.localPosition = new Vector3(-3f, 0.5f, 9.5f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone2.2":
-                                        go2.transform.localPosition = new Vector3(-3f, 0.5f, 1.93f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone2.3":
-                                        go2.transform.localPosition = new Vector3(-1.43f, 0.5f, -2.41f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone2.4":
-                                        go2.transform.localPosition = new Vector3(-3f, 0.5f, -6.1f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone2.5":
-                                        go2.transform.localPosition = new Vector3(-2.4f, 0.5f, -10f);
-                                        selected = "";
-                                        break;
-                                //Dritte Reihe der Dropzones
-                                    case "Dropzone3.1":
-                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, -10f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone3.2":
-                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, -6.1f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone3.3":
-                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, 1.93f);
-                                        selected = "";
-                                        break;
-                                    case "Dropzone3.4":
-                                        go2.transform.localPosition = new Vector3(-8f, 0.5f, 9.5f);
-                                        selected = "";
-                                        break;
+                                    //Abfrage wo der Sandsack hingesetzt wird
+                                    switch (hit.collider.tag)
+                                    {
+                                        case "Dropzone1.1":
+                                            go2.transform.localPosition = new Vector3(2f, yPos, 1.93f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone1.2":
+                                            go2.transform.localPosition = new Vector3(2f, yPos, -1.95f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone1.3":
+                                            go2.transform.localPosition = new Vector3(2f, yPos, -10f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone1.4":
+                                            go2.transform.localPosition = new Vector3(2f, yPos, 9.5f);
+                                            selected = "";
+                                            break;
+                                        //Zweite Reihe der Dropzones
+                                        case "Dropzone2.1":
+                                            go2.transform.localPosition = new Vector3(-3f, yPos, 9.5f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone2.2":
+                                            go2.transform.localPosition = new Vector3(-3f, yPos, 1.93f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone2.3":
+                                            go2.transform.localPosition = new Vector3(-1.43f, yPos, -2.41f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone2.4":
+                                            go2.transform.localPosition = new Vector3(-3f, yPos, -6.1f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone2.5":
+                                            go2.transform.localPosition = new Vector3(-2.4f, yPos, -10f);
+                                            selected = "";
+                                            break;
+                                        //Dritte Reihe der Dropzones
+                                        case "Dropzone3.1":
+                                            go2.transform.localPosition = new Vector3(-8f, yPos, -10f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone3.2":
+                                            go2.transform.localPosition = new Vector3(-8f, yPos, -6.1f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone3.3":
+                                            go2.transform.localPosition = new Vector3(-8f, yPos, 1.93f);
+                                            selected = "";
+                                            break;
+                                        case "Dropzone3.4":
+                                            go2.transform.localPosition = new Vector3(-8f, yPos, 9.5f);
+                                            selected = "";
+                                            break;
+                                    }
                                 }
                             }
                         }
                     }
-                }
 
-                //Farbe ändern
-                GameObject go = GameObject.FindWithTag(selected);
-                Renderer goRenderer = go.GetComponent<Renderer>();
-                goRenderer.material.SetColor("_Color", Color.red);
-                if (go.tag != selected)
-                {
-                    goRenderer.material.SetColor("_Color", Color.yellow);
+                    //Farbe ändern
+                    GameObject go = GameObject.FindWithTag(selected);
+                    Renderer goRenderer = go.GetComponent<Renderer>();
+                    goRenderer.material.SetColor("_Color", Color.red);
+                    if (go.tag != selected)
+                    {
+                        goRenderer.material.SetColor("_Color", Color.yellow);
+                    }
+                    //go.transform.GetComponent<Renderer>().material.SetTexture("SelectedSandsack", texture);
                 }
-                //go.transform.GetComponent<Renderer>().material.SetTexture("SelectedSandsack", texture);
             }
         }
     }
