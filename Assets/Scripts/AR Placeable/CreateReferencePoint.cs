@@ -26,12 +26,6 @@ public class CreateReferencePoint : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetReferencePointAsParent(ARPlacementInteractable arPlacementInteractable, GameObject gameObject)
     {
         log += "A new Object has been placed\n";
@@ -54,6 +48,6 @@ public class CreateReferencePoint : MonoBehaviour
 
     private void OnGUI()
         {
-            GUILayout.Label(log, style);
+            //GUILayout.Label(log, style);
         }
 }

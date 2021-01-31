@@ -17,6 +17,6 @@ public class DeactivateCanvas : MonoBehaviour
 
     private void OnGUI()
     {
-        GUILayout.Label(log, style);
+        //GUILayout.Label(log, style);
     }
 }

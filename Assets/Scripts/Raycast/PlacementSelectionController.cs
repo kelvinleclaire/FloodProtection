@@ -30,7 +30,7 @@ public class PlacementSelectionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        log += "Awaken yo \n";
+        log += "Awaken \n";
     }
 
     // Update is called once per frame
@@ -40,13 +40,13 @@ public class PlacementSelectionController : MonoBehaviour
         {
             Plane = GameObject.Find("Plane");
             if (Plane != null)
-            {
-                //yPos = Plane.transform.localPosition.y + 0.01f;
+            {                
                 log += $"yPos= {yPos}\n";
             }
         }
         else
         {
+            //Ein Touch auf dem Screen wird erkannt.
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -57,14 +57,14 @@ public class PlacementSelectionController : MonoBehaviour
                     Ray ray = arCamera.ScreenPointToRay(touch.position);
                     RaycastHit hit;
 
-                    //Falls noch kein GO selected wurde
-
+                    //Falls noch kein GameObject selected wurde
                     if (string.IsNullOrEmpty(selected))
                     {
+                        //In "hit" befindet sich das getroffene Object
                         if (Physics.Raycast(ray, out hit))
                         {
                             log += "Inside Raycast \n";
-
+                            //Falls ein Sandsack berührt wurde, wird dessen Tag gespeichert
                             if (hit.collider.tag.StartsWith("Sandsack"))
                             {
                                 selected = hit.collider.tag;
@@ -78,14 +78,16 @@ public class PlacementSelectionController : MonoBehaviour
                             log += $"selected: {selected}\n";
                         }
                     }
-                    //Falls bereits ein GO selected ist soll dieses nun drapiert werden
+                    //Falls bereits ein GameObject selected ist soll dieses nun drapiert werden
                     else
                     {
                         if (Physics.Raycast(ray, out hit))
                         {
+                            //Übergabe des zuvor selektierten Sandsacks
                             GameObject go2 = GameObject.FindWithTag(selected);
                             if (go2 != null)
                             {
+                                //Platzierung nur auf Dropzone möglich
                                 if (hit.collider.tag.StartsWith("Dropzone"))
                                 {
                                     //Abfrage wo der Sandsack hingesetzt wird
@@ -159,22 +161,14 @@ public class PlacementSelectionController : MonoBehaviour
                     {
                         goRenderer.material.SetColor("_Color", Color.yellow);
                     }
-                    //go.transform.GetComponent<Renderer>().material.SetTexture("SelectedSandsack", texture);
                 }
             }
         }
     }
 
-
-
-    void ChangeSelectedOject(GameObject selected)
-    {
-        log += "Hier kommen wir nie an" + "\n";
-    }
-
     private void OnGUI()
     {
-        GUILayout.Label(log, style);
+        //GUILayout.Label(log, style);
     }
 
 }

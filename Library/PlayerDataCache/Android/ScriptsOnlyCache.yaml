@@ -3,14 +3,11 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - ActivateEndscreen
     - ActuallyStartTheGame
-    - CheckForCollision
     - CreateReferencePoint
     - DeactivateCanvas
     - DetectResult
     - LimitPlaceableObjectsToOne
-    - NPCWalk
     - OrderScript
-    - PlacementObjects
     - PlacementSelectionController
     - RestartGame
     - StartTheGame
@@ -100,53 +97,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 11244}
     - Class: 114
-      Script: {instanceID: 11268}
+      Script: {instanceID: 11266}
     - Class: 114
-      Script: {instanceID: 11380}
+      Script: {instanceID: 11378}
     - Class: 114
-      Script: {instanceID: 11474}
+      Script: {instanceID: 11472}
     - Class: 114
-      Script: {instanceID: 11526}
+      Script: {instanceID: 11524}
     - Class: 114
-      Script: {instanceID: 11568}
+      Script: {instanceID: 11566}
     - Class: 114
-      Script: {instanceID: 11726}
+      Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11788}
+      Script: {instanceID: 11786}
     - Class: 114
       Script: {instanceID: 11874}
     - Class: 114
-      Script: {instanceID: 11876}
+      Script: {instanceID: 11932}
     - Class: 114
-      Script: {instanceID: 11934}
+      Script: {instanceID: 11944}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 11984}
     - Class: 114
-      Script: {instanceID: 11986}
+      Script: {instanceID: 12046}
     - Class: 114
-      Script: {instanceID: 12050}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12476}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12486}
+      Script: {instanceID: 12484}
     - Class: 114
-      Script: {instanceID: 12488}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 12530}
+      Script: {instanceID: 12528}
     - Class: 114
-      Script: {instanceID: 12624}
+      Script: {instanceID: 12622}
+    - Class: 114
+      Script: {instanceID: 12654}
     - Class: 114
       Script: {instanceID: 12812}
     - Class: 114
-      Script: {instanceID: 12826}
-    - Class: 114
       Script: {instanceID: 12878}
+    - Class: 114
+      Script: {instanceID: 12958}
     - Class: 114
       Script: {instanceID: 12998}
     - Class: 114
@@ -168,26 +167,16 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13446}
     - Class: 114
-      Script: {instanceID: 13600}
+      Script: {instanceID: 13598}
     - Class: 114
-      Script: {instanceID: 13714}
-    - Class: 114
-      Script: {instanceID: 28760}
-    - Class: 114
-      Script: {instanceID: 77124}
-    - Class: 114
-      Script: {instanceID: 87558}
+      Script: {instanceID: 13710}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
-    - Class: 137
-      Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 195
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
@@ -452,12 +441,6 @@ ScriptsOnlyBuild:
     className: TransitionArmModel
   - hash:
       serializedVersion: 2
-      Hash: 86bd19dffaee61da09d68a0a33637117
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NPCWalk
-  - hash:
-      serializedVersion: 2
       Hash: e61d6a8a21659201a6e9f933c9090206
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -468,12 +451,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 7fbe7ad5acad837358abd13aef09e42c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TimerScript
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -656,6 +633,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: b9ee594e6acc9791b8a2056a9ff9a0e5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ActivateEndscreen
+  - hash:
+      serializedVersion: 2
       Hash: 51e955031034dba2db5159e0a8b8ef49
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -678,6 +661,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DetectResult
   - hash:
       serializedVersion: 2
       Hash: 1bfc20863dd555eebc7db8c9d8fce2ad
@@ -720,12 +709,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARPointCloudParticleVisualizer
-  - hash:
-      serializedVersion: 2
-      Hash: 7fbe7ad5acad837358abd13aef09e42c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CheckForCollision
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -780,6 +763,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RestartGame
   - hash:
       serializedVersion: 2
       Hash: b033454399c8311e80fd203ae831b322
@@ -848,7 +837,7 @@ ScriptsOnlyBuild:
     className: ARPointCloudManager
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: d4f138d9662f9bd684f02e71c22d76a2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LimitPlaceableObjectsToOne
@@ -918,12 +907,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlacementObjects
   - hash:
       serializedVersion: 2
       Hash: 42d5616485cf08019deaf720013aee3a
@@ -1086,25 +1069,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 4f866760a464596a329cb0596482986b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DetectResult
-  - hash:
-      serializedVersion: 2
-      Hash: b9ee594e6acc9791b8a2056a9ff9a0e5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ActivateEndscreen
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RestartGame
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity
-  playerPath: D:/WS2021/AVR/Project/apks/testPI123.apk
+  playerPath: D:/WS2021/AVR/Project/apks/FinalMaybe.apk

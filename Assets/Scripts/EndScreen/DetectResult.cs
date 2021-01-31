@@ -1,25 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DetectResult : MonoBehaviour
 {
-    public GameObject checkpoint;
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Water"))
+        //Wenn das Wasser mit einem Checkpoint kollidiert, wird der State auf diesen gesetzt
+        if (other.gameObject.tag.StartsWith("Check"))
         {
-            switch (this.gameObject.tag)
+            switch (other.gameObject.tag)
             {
                 case "Check10":
-                    Globals.check10 = true;
+                    Globals.state = StateEnum.Lose;
                     break;
                 case "Check40":
-                    Globals.check40 = true;
+                    Globals.state = StateEnum.HaflWin;
                     break;
                 case "Check80":
-                    Globals.check80 = true;
+                    Globals.state = StateEnum.Win;
                     break;
             }
         }

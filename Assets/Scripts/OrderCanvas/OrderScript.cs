@@ -30,6 +30,9 @@ public class OrderScript : MonoBehaviour
 
     public void order()
     {
+        //Hier können neue Sandsäcke bestellt werden. Pro Bestellung werden zwei neue Instanzen des Prefabs generiert.
+        //Sie erhalten ein eindeutiges Tag und werden ein Child der City. Außerdem wird ihre Größe und Ausrichtung angepasst.
+        //SandsackPlace und Sandsack1Place sind Empty Gameobjects, die als Orientierung helfen.
         Vector3 pos = SandsackPlace.transform.position;
         if (id <= 6)
         {
@@ -50,6 +53,6 @@ public class OrderScript : MonoBehaviour
     }
     private void OnGUI()
     {
-        GUILayout.Label(log, style);
+        //GUILayout.Label(log, style);
     }
 }

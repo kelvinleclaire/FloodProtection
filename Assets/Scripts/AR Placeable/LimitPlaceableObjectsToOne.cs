@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.AR;
-using System;
- 
+
 public class LimitPlaceableObjectsToOne : MonoBehaviour
 {
+    public GameObject WelcomeCanvas;
 
     private ARPlacementInteractable placementInteractable;
 
@@ -15,8 +13,9 @@ public class LimitPlaceableObjectsToOne : MonoBehaviour
         ARObjectPlacedEvent aRObjectPlacedEvent = placementInteractable.onObjectPlaced;
         aRObjectPlacedEvent.AddListener(ObjectPlaced);
     }
- 
- 
+
+
+    //Sobald die City einmal platziert wurde, wird das Placement-Prefab auf null gesetzt.
     public void ObjectPlaced(ARPlacementInteractable p, GameObject q)
     {
         placementInteractable.placementPrefab = null;

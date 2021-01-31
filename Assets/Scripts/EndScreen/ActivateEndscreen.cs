@@ -16,19 +16,21 @@ public class ActivateEndscreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Globals.endGame) { 
-        if (Globals.check80 && !Globals.check40 && !Globals.check10)
-        {
-            VictoryScreen.SetActive(true);
-        }
-        if (Globals.check40 && !Globals.check10)
-        {
-            HalfWonScreen.SetActive(true);
-        }
-        if (Globals.check10)
+        //Sobald das der Timer abgelaufen ist, wird das Spiel ausgewertet und das entsprechende Ende eingeblendet.
+        if (Globals.endGame) {
+
+            switch (Globals.state)
             {
-                LoseScreen.SetActive(true);
-            }
+                case StateEnum.Win:
+                    VictoryScreen.SetActive(true);
+                    break;
+                case StateEnum.HaflWin:
+                    HalfWonScreen.SetActive(true);
+                    break;
+                case StateEnum.Lose:
+                    LoseScreen.SetActive(true);
+                    break;
+            }      
         }
 
     }
